@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.lvjc</groupId>
-	<artifactId>okhttp</artifactId>
+	<artifactId>okhttp-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>okhttp</name>
+	<name>okhttp-demo</name>
 	<description>Demo project for okhttp</description>
 
 	<parent>
