@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: okhttp-service
+server:
+  port: 8084
+  context-path: /okhttp-service

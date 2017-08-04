@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>用户注册</title>
+</head>
+<body>
+    <h2>用户注册信息：</h2>
+<form action="http://172.16.233.82:8084/okhttp-service/user/update/head" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td width="20%">用户名</td>
+            <td width="80%">
+                <input type="text" name="username"/>
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">密码</td>
+            <td width="80%"><input type="password" name="password"/></td>
+        </tr>
+        <tr>
+            <td width="20%">头像</td>
+            <td width="80%"><input type="file" name="icon"/></td>
+        </tr>
+    </table>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>

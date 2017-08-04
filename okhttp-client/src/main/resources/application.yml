@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: okhttp-client
+server:
+  port: 8085
+  context-path: /okhttp-client
+
+application:
+  okhttp-service.url.prefix: http://172.16.233.82:8084/okhttp-service
