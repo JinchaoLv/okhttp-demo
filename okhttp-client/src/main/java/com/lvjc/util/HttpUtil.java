@@ -87,7 +87,7 @@ public class HttpUtil {
                 .url(this.buildUrlWithRequestParams(url, requestParams))
                 .headers(this.buildHeaders(headers))
                 .build();
-        return this.callAndReadResponseStream(request);
+        return this.callAndReadResponseBodyStream(request);
     }
 
     /**
@@ -282,7 +282,7 @@ public class HttpUtil {
         return remoteApiResult.getData();
     }
 
-    private byte[] callAndReadResponseStream(Request request){
+    private byte[] callAndReadResponseBodyStream(Request request){
         Response response = null;
         try {
             response = this.getOkHttpClient().newCall(request).execute();
