@@ -291,7 +291,9 @@ public class HttpUtil {
         } catch (IOException e) {
             return new byte[0];
         }
+        //获取ResponseBody的输入流
         InputStream inputStream = response.body().byteStream();
+        //从输入流读取字节码
         byte[] bytes = StreamUtil.getAllBytesOfInputStream(inputStream);
         return bytes;
     }
