@@ -72,7 +72,7 @@ public class HttpUtil {
                 .url(this.buildUrlWithRequestParams(url, requestParams))
                 .headers(this.buildHeaders(headers))
                 .build();
-        return this.callAndResolveResponseBody(request, typeToken);
+        return this.callAndReadResponseBodyString(request, typeToken);
     }
 
     /**
@@ -143,7 +143,7 @@ public class HttpUtil {
                 .headers(this.buildHeaders(headers))
                 .post(RequestBody.create(mediaType, str))
                 .build();
-        return this.callAndResolveResponseBody(request, typeToken);
+        return this.callAndReadResponseBodyString(request, typeToken);
     }
 
     /**
@@ -173,7 +173,7 @@ public class HttpUtil {
                 .headers(this.buildHeaders(headers))
                 .post(requestFileBody)
                 .build();
-        return this.callAndResolveResponseBody(request, typeToken);
+        return this.callAndReadResponseBodyString(request, typeToken);
     }
 
     /**
@@ -189,7 +189,7 @@ public class HttpUtil {
                 .headers(this.buildHeaders(headers))
                 .post(RequestBody.create(mediaType, file))
                 .build();
-        return this.callAndResolveResponseBody(request, typeToken);
+        return this.callAndReadResponseBodyString(request, typeToken);
     }
 
     /**
@@ -205,7 +205,7 @@ public class HttpUtil {
                 .headers(buildHeaders(headers))
                 .post(buildRequestBody(formData))
                 .build();
-        return this.callAndResolveResponseBody(request, typeToken);
+        return this.callAndReadResponseBodyString(request, typeToken);
     }
 
     /**
@@ -234,7 +234,7 @@ public class HttpUtil {
                 .headers(this.buildHeaders(headers))
                 .post(requestBody)
                 .build();
-        return this.callAndResolveResponseBody(request, typeToken);
+        return this.callAndReadResponseBodyString(request, typeToken);
     }
 
 
@@ -269,7 +269,7 @@ public class HttpUtil {
         return builder.build();
     }
 
-    private <T> T callAndResolveResponseBody(Request request, TypeToken<RemoteApiResult<T>> typeToken){
+    private <T> T callAndReadResponseBodyString(Request request, TypeToken<RemoteApiResult<T>> typeToken){
         Response response = null;
         try {
             response = this.getOkHttpClient().newCall(request).execute();
