@@ -110,7 +110,7 @@ public class HttpUtilTest {
     public void testPostStream(){
         String url = apiUrlConfiguration.getOkhttpServicePrefix() + "/file/upload";
         System.out.println(HttpUtil.instance().postStream(url, null, null, MediaType.parse("application/json"),
-                new File("F:/demo/okhttp/okhttp-client/src/test/resources/testFile.txt"), new TypeToken<RemoteApiResult<String>>(){}));
+                new User("lvjc", "123456"), new TypeToken<RemoteApiResult<String>>(){}));
     }
 
     @Test
